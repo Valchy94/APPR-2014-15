@@ -1,3 +1,9 @@
+---
+output:
+  html_document:
+    keep_md: yes
+  pdf_document: default
+---
 # Analiza podatkov s programom R, 2014/15
 
 Avtor: Valentina Gnamuš
@@ -5,9 +11,16 @@ Avtor: Valentina Gnamuš
 Repozitorij z gradivi pri predmetu APPR v študijskem letu 2014/15.
 
 ## Tematika
+Za temo projekta sem si izbrala enakopravnost med spoloma. Moj namen je analizirati domnevne razlike med ženskim in moškim delom prebivalstva na področjih dela, denarja, izobrazbe, zdravja, prostega časa in moči (politične, ekonomske). Pri tem se bom osredotočila predvsem na evropske države, ker pa je tema aktualna tudi drugod po svetu, bo za primerjavo prikazano še stanje v kakšni neevropski državi.
 
-Izbrali si boste temo, s katero se bo vaš projekt ukvarjal. Tukaj boste
-napisali, kje ste dobili podatke, ter kakšen je vaš cilj.
+Pri zbiranju podatkov mi bodo v pomoč naslednje spletne strani:
+
+* http://data.worldbank.org/topic/gender#boxes-box-topic_cust_sec
+* http://www.stat.si/letopis/LetopisVsebina.aspx?poglavje=12&lang=si&leto=2012
+* http://epp.eurostat.ec.europa.eu/portal/page/portal/statistics/search_database
+* http://w3.unece.org/pxweb
+* http://eige.europa.eu
+
 
 ## Program
 

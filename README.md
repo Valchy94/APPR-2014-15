@@ -11,7 +11,7 @@ Avtor: Valentina Gnamuš
 Repozitorij z gradivi pri predmetu APPR v študijskem letu 2014/15.
 
 ## Tematika
-Za temo projekta sem si izbrala enakopravnost med spoloma. Moj namen je analizirati domnevne razlike med ženskim in moškim delom prebivalstva na področjih dela, denarja, izobrazbe, zdravja, prostega časa in moči (politične, ekonomske). Pri tem se bom osredotočila predvsem na evropske države, ker pa je tema aktualna tudi drugod po svetu, bo za primerjavo prikazano še stanje v kakšni neevropski državi.
+Za temo projekta sem si izbrala enakopravnost med spoloma. Moj namen je analizirati domnevne razlike med ženskim in moškim delom prebivalstva na področjih dela, denarja, izobrazbe, zdravja, prostega časa in moči (politične, gospodarske). Pri tem se bom osredotočila predvsem na evropske države, ker pa je tema aktualna tudi drugod po svetu, bo za primerjavo prikazano še stanje v kakšni neevropski državi.
 
 Pri zbiranju podatkov mi bodo v pomoč naslednje spletne strani:
 

@@ -71,3 +71,4 @@ uvoziTabelo_zdravje <- function() {
 }
 cat("Uvažam podatke o spolni enakopravnosti glede na zdravje.\n")
 index_zdravje_2010 <- uvoziTabelo_zdravje()
+

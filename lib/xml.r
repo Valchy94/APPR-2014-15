@@ -37,3 +37,16 @@ uvozi.podatkim <- function() {
                           2, as.numeric), row.names=matrikam[,1]))
 }
 
+#Še za ženske:
+uvozi.podatkiz <- function() {
+  url.podatkiz <- "podatki/Povprecnodelo_zenske.html"
+  doc.podatkiz <- htmlTreeParse(url.podatkiz, useInternalNodes=TRUE)
+  tabelez <- getNodeSet(doc.podatkiz, "//table")
+  vrsticez <- getNodeSet(tabelez[[1]], ".//tr")
+  seznamz <- lapply(vrsticez[1:length(vrsticez)-1], stripByPath, "./td")
+  matrikaz <- matrix(unlist(seznamz), nrow=length(seznamz), byrow=TRUE)
+  colnames(matrikaz) <- gsub("\n", " ", stripByPath(vrsticez[[length(vrsticez)]], ".//th"))
+  return(data.frame(apply(gsub("\\(.*$", "",matrikaz[,2:7]),
+                          2, as.numeric), row.names=matrikaz[,1]))
+}
+

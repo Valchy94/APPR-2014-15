@@ -73,6 +73,11 @@ cat("Uvažam podatke o spolni enakopravnosti glede na zdravje.\n")
 index_zdravje_2010 <- uvoziTabelo_zdravje()
 
 #UVAŽANJE HTML DATOTEKE
+##TEDENSKO OPR: DELOVNE URE MOŠKI
 source("lib/xml.r", encoding="UTF-8")
 cat("Uvažam podatke o povprečno tedensko opravljenih delovnih urah za moške.\n")
 teden_moski <- uvozi.podatkim()
+##TEDENSKO OPR: DEL: URE ŽENSKE
+source("lib/xml.r",encoding="UTF-8")
+cat("Uvažam podatke o povprečno tedensko opravljenih delovnih urah za ženske.\n")
+teden_zenske <- uvozi.podatkiz()

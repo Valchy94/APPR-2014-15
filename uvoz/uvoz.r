@@ -34,7 +34,7 @@ uvoziTabelo_delo <- function() {
                     fileEncoding = "Windows-1250"))
 }
 cat("Uvažam podatke o spolni enakopravnosti glede na delo.\n")
-index_delo <- uvoziTabelo_delo()
+delo <- uvoziTabelo_delo()
 
 #DENAR
 uvoziTabelo_denar <- function() {
@@ -43,7 +43,7 @@ uvoziTabelo_denar <- function() {
                     fileEncoding = "Windows-1250"))
 }
 cat("Uvažam podatke o spolni enakopravnosti glede na denar.\n")
-index_denar <- uvoziTabelo_denar()
+denar <- uvoziTabelo_denar()
 
 #MOČ
 uvoziTabelo_moc <- function() {
@@ -52,7 +52,7 @@ uvoziTabelo_moc <- function() {
                     fileEncoding = "Windows-1250"))
 }
 cat("Uvažam podatke o spolni enakopravnosti glede na moč.\n")
-index_moc <- uvoziTabelo_moc()
+moc <- uvoziTabelo_moc()
 
 #ZNANJE
 uvoziTabelo_znanje <- function() {
@@ -61,7 +61,7 @@ uvoziTabelo_znanje <- function() {
                     fileEncoding = "Windows-1250"))
 }
 cat("Uvažam podatke o spolni enakopravnosti glede na znanje.\n")
-index_znanje <- uvoziTabelo_znanje()
+znanje <- uvoziTabelo_znanje()
 
 #ZDRAVJE
 uvoziTabelo_zdravje <- function() {
@@ -70,7 +70,7 @@ uvoziTabelo_zdravje <- function() {
                     fileEncoding = "Windows-1250"))
 }
 cat("Uvažam podatke o spolni enakopravnosti glede na zdravje.\n")
-index_zdravje_2010 <- uvoziTabelo_zdravje()
+zdravje <- uvoziTabelo_zdravje()
 
 #UVAŽANJE HTML DATOTEKE
 ##TEDENSKO OPR: DELOVNE URE MOŠKI

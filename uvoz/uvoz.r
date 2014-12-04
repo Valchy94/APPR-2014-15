@@ -25,7 +25,7 @@ uvoziTabelo_cas <- function() {
                        fileEncoding = "Windows-1250"))
    }
 cat("Uvažam podatke o spolni enakopravnosti glede na preživljanje prostega časa.\n")
-index_cas <- uvoziTabelo_cas()
+cas <- uvoziTabelo_cas()
 
 #DELO
 uvoziTabelo_delo <- function() {

@@ -41,15 +41,17 @@ barplot(znanje[1:28,2],
         ylab="Delež v %",
         main="Enakopravnost glede na izobrazbo")
 
-#Graf, ki prikazuje povprečje opravljenih delovnih ur za ženske v Sloveniji
-plot(teden_zenske[22,1:6],
-     names.arg=colnames(teden_zenske)[1:6],
-     xlab="leto", ylab="ure",
-     main="opravljeno delo ženske")
 
-#Graf, ki prikazuje povprečje opravljenih delovnih ur za moške v Sloveniji
-plot(teden_moski[22,1:6],
-     names.arg=colnames(teden_moski)[1:6],
-     xlab="leto", ylab="ure",
-     main="opravljeno delo moški")
-dev.off
+#Graf, ki prikazuje primerjavo med moškimi in ženskami 
+#glede na povprečje opravljenih delovnih ur/teden Sloveniji
+leta <- 2008:2013
+podatki.zenske <- teden_zenske[22,1:6]
+podatki.moski <- teden_moski[22,1:6]
+plot(range(leta), range(c(podatki.zenske, podatki.moski)), "n",
+     xlab="Leto", ylab="Delovne ure/teden",
+     main="Opravljeno delo v Sloveniji")
+lines(leta, podatki.zenske, type="p", pch=20, col="magenta")
+lines(leta, podatki.moski, type="p", pch=20, col="blue")
+text(2012.3,43.1, "Prikaz razlike m/ž",cex=3/4)
+
+dev.off()

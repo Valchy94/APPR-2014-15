@@ -72,3 +72,7 @@ uvoziTabelo_zdravje <- function() {
 cat("Uvažam podatke o spolni enakopravnosti glede na zdravje.\n")
 index_zdravje_2010 <- uvoziTabelo_zdravje()
 
+#UVAŽANJE HTML DATOTEKE
+source("lib/xml.r", encoding="UTF-8")
+cat("Uvažam podatke o povprečno tedensko opravljenih delovnih urah za moške.\n")
+teden_moski <- uvozi.podatkim()

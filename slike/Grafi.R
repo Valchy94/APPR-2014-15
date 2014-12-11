@@ -3,7 +3,8 @@ pdf("slike/grafi.pdf",paper="a4")
 i<-0.5
 j<-1
 barplot(cas[1:28,2], 
-        #names.arg = rownames(cas)[1:28], 
+        #names.arg = rownames(cas)[1:28],
+        beside=TRUE,
         col= rainbow(28, start=0,end=5/8), xlab="Država", 
         ylab="Delež v %", 
         main="Enakopravnost glede na prosti čas")
@@ -19,6 +20,7 @@ i<-0.5
 j<-1
 barplot(delo[1:28,2],
         #names.arg = rownames(delo)[1:28],
+        beside=TRUE,
         col=heat.colors(28,alpha=2/3), xlab="Država",
         ylab="Delež v %",
         main="Enakopravnost glede na delo")
@@ -34,6 +36,7 @@ i<-0.5
 j<-1
 barplot(denar[1:28,2],
         #names.arg = rownames(denar)[1:28],
+        beside=TRUE,
         col=topo.colors(28), xlab="Država",
         ylab="Delež v %",
         main="Enakopravnost glede na denar")
@@ -49,6 +52,7 @@ i<-0.5
 j<-1
 barplot(moc[1:28,2],
         #names.arg = rownames(moc)[1:28],
+        beside=TRUE,
         col=cm.colors(28), xlab="Država",
         ylab="Delež v %",
         main="Enakopravnost glede na moc")
@@ -64,6 +68,7 @@ i<-0.5
 j<-1
 barplot(zdravje[1:28,2],
         #names.arg = rownames(zdravje)[1:28],
+        beside=TRUE,
         col=rainbow(28, start=1/2,alpha=3/4), xlab="Država",
         ylab="Delež v %",
         main="Enakopravnost glede na zdravje")
@@ -79,6 +84,7 @@ i<-0.5
 j<-1
 barplot(znanje[1:28,2],
         #names.arg = rownames(znanje)[1:28],
+        beside=TRUE,
         col=rainbow(28, start=0, end=2/6), xlab="Država",
         ylab="Delež v %",
         main="Enakopravnost glede na izobrazbo")

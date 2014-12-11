@@ -106,6 +106,7 @@ plot(range(leta), range(c(podatki.zenske, podatki.moski)), "n",
      main="Opravljeno delo v Sloveniji")
 lines(leta, podatki.zenske, type="p", pch=20, col="magenta")
 lines(leta, podatki.moski, type="p", pch=20, col="blue")
-text(2012.3,43.1, "Prikaz razlike m/ž",cex=3/4)
+text(2010.2,43.15, "Prikaz razlike v tedensko opravljenih delovnih urah",cex=3/4)
+legend(2012.1,43.3, c("moški","ženske"), pch=c(20,20), col=c("blue", "magenta"))
 
 dev.off()

@@ -55,7 +55,7 @@ barplot(moc[1:28,2],
         beside=TRUE,
         col=cm.colors(28), xlab="Država",
         ylab="Delež v %",
-        main="Enakopravnost glede na moc")
+        main="Enakopravnost glede na moč")
 while (j<28){
   mtext(rownames(moc)[j], side=1, at=i, cex=0.55)
   i<-i+1.205
@@ -106,7 +106,7 @@ plot(range(leta), range(c(podatki.zenske, podatki.moski)), "n",
      main="Opravljeno delo v Sloveniji")
 lines(leta, podatki.zenske, type="p", pch=20, col="magenta")
 lines(leta, podatki.moski, type="p", pch=20, col="blue")
-text(2010.2,43.15, "Prikaz razlike v tedensko opravljenih delovnih urah",cex=3/4)
-legend(2012.1,43.3, c("moški","ženske"), pch=c(20,20), col=c("blue", "magenta"))
+text(2010.3,43.15, "Prikaz razlike v tedensko opravljenih delovnih urah",cex=6/7)
+legend(2012.1,43.1, c("moški","ženske"), pch=c(20,20), col=c("blue", "magenta"))
 
 dev.off()

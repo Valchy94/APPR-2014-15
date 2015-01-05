@@ -13,7 +13,7 @@ drzave <- c('Belgium','Bulgaria','Czech Republic','Denmark', 'Germany','Estonia'
             'Hungary','Malta','Netherlands','Austria','Poland','Portugal','Romania',
             'Slovenia','Slovakia','Finland','Sweden','United Kingdom')
 drzave <- drzave[drzave %in% svet$name_long]
-EU <- svet[svet$name_long %in% drzave,]
+EU <- svet[match(drzave, svet$name_long),]
 casa<-c(cas$Time[1:16],cas$Time[18:27])
 dela<-c(delo$Work[1:16],delo$Work[18:27])
 denarja<-c(denar$Money[1:16],denar$Money[18:27])
@@ -36,6 +36,11 @@ koordinate["United Kingdom",2] <- koordinate["United Kingdom",2]-1
 koordinate["Sweden",1] <- koordinate["Sweden",1]-1
 koordinate["Greece",1] <- koordinate["Greece",1]-0.8
 koordinate["Finland",2] <- koordinate["Finland",2]-2
+ostale <- svet[(svet$continent == "Europe" | svet$name_long == "Turkey")
+               & ! svet$name_long %in% drzave,]
+rot <- ifelse(imena == "Portugal", 90, 0)
+
+imena["Luxembourg"] <- ""
 imena["United Kingdom"] <- "United\nKingdom"
 
 #Rišem zemljevide
@@ -46,42 +51,48 @@ print(spplot(EU, 'casmz', xlim=c(-25,40), ylim=c(33,73),
        main = "Enakopravnost spolov glede na prosti čas",
        col.regions=rainbow(26, start=0, end=3/7),
        sp.layout=list(
-         list("sp.text", koordinate, imena, cex=0.6)),
+         list("sp.polygons", ostale, fill = "white"),
+         list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
        par.settings = list(panel.background=list(col="#FDFD99"))))
 
 print(spplot(EU, 'delomz', xlim=c(-25,40), ylim=c(33,73), 
              main = "Enakopravnost spolov glede na delo",
              col.regions=rainbow(26, start=0, end=3/7),
              sp.layout=list(
-               list("sp.text", koordinate, imena, cex=0.6)),
+               list("sp.polygons", ostale, fill = "white"),
+               list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
              par.settings = list(panel.background=list(col="#FDFD99"))))
 
 print(spplot(EU, 'denarmz', xlim=c(-25,40), ylim=c(33,73), 
              main = "Enakopravnost spolov glede na prihodke",
              col.regions=rainbow(26, start=0, end=3/7),
              sp.layout=list(
-               list("sp.text", koordinate, imena, cex=0.6)),
+               list("sp.polygons", ostale, fill = "white"),
+               list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
              par.settings = list(panel.background=list(col="#FDFD99"))))
 
 print(spplot(EU, 'mocmz', xlim=c(-25,40), ylim=c(33,73), 
              main = "Enakopravnost spolov glede na moč",
              col.regions=rainbow(26, start=0, end=3/7),
              sp.layout=list(
-               list("sp.text", koordinate, imena, cex=0.6)),
+               list("sp.polygons", ostale, fill = "white"),
+               list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
              par.settings = list(panel.background=list(col="#FDFD99"))))
 
 print(spplot(EU, 'zdravjemz', xlim=c(-25,40), ylim=c(33,73), 
              main = "Enakopravnost spolov glede na zdravje",
              col.regions=rainbow(26, start=0, end=3/7),
              sp.layout=list(
-               list("sp.text", koordinate, imena, cex=0.6)),
+               list("sp.polygons", ostale, fill = "white"),
+               list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
              par.settings = list(panel.background=list(col="#FDFD99"))))
 
 print(spplot(EU, 'znanjemz', xlim=c(-25,40), ylim=c(33,73), 
              main = "Enakopravnost spolov glede na znanje",
              col.regions=rainbow(26, start=0, end=3/7),
              sp.layout=list(
-               list("sp.text", koordinate, imena, cex=0.6)),
+               list("sp.polygons", ostale, fill = "white"),
+               list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
              par.settings = list(panel.background=list(col="#FDFD99"))))
 dev.off()
 

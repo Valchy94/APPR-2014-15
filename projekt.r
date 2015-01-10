@@ -1,3 +1,6 @@
+#Za čiščenje delovnega okolje, brisanje PDF datotek
+silent <- TRUE
+source("clearpdf.r", encoding = "UTF-8")
 # 2. faza: Obdelava, uvoz in čiščenje podatkov
 source("uvoz/uvoz.r", encoding="UTF-8")
 source("slike/Grafi.R",encoding="UTF-8")

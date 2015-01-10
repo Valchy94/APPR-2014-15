@@ -46,7 +46,7 @@ imena["United Kingdom"] <- "United\nKingdom"
 #Rišem zemljevide
 cat("Rišem zemljevide v PDF.\n")
 
-pdf("slike/zemljevid.pdf")
+pdf("slike/zemljevidcas.pdf")
 print(spplot(EU, 'casmz', xlim=c(-25,40), ylim=c(33,73), 
        main = "Enakopravnost spolov glede na prosti čas",
        col.regions=rainbow(26, start=0, end=3/7),
@@ -54,7 +54,9 @@ print(spplot(EU, 'casmz', xlim=c(-25,40), ylim=c(33,73),
          list("sp.polygons", ostale, fill = "white"),
          list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
        par.settings = list(panel.background=list(col="#FDFD99"))))
+dev.off()
 
+pdf("slike/zemljeviddelo.pdf")
 print(spplot(EU, 'delomz', xlim=c(-25,40), ylim=c(33,73), 
              main = "Enakopravnost spolov glede na delo",
              col.regions=rainbow(26, start=0, end=3/7),
@@ -62,7 +64,9 @@ print(spplot(EU, 'delomz', xlim=c(-25,40), ylim=c(33,73),
                list("sp.polygons", ostale, fill = "white"),
                list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
              par.settings = list(panel.background=list(col="#FDFD99"))))
+dev.off()
 
+pdf("slike/zemljeviddenar.pdf")
 print(spplot(EU, 'denarmz', xlim=c(-25,40), ylim=c(33,73), 
              main = "Enakopravnost spolov glede na prihodke",
              col.regions=rainbow(26, start=0, end=3/7),
@@ -70,7 +74,9 @@ print(spplot(EU, 'denarmz', xlim=c(-25,40), ylim=c(33,73),
                list("sp.polygons", ostale, fill = "white"),
                list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
              par.settings = list(panel.background=list(col="#FDFD99"))))
+dev.off()
 
+pdf("slike/zemljevidmoc.pdf")
 print(spplot(EU, 'mocmz', xlim=c(-25,40), ylim=c(33,73), 
              main = "Enakopravnost spolov glede na moč",
              col.regions=rainbow(26, start=0, end=3/7),
@@ -78,7 +84,9 @@ print(spplot(EU, 'mocmz', xlim=c(-25,40), ylim=c(33,73),
                list("sp.polygons", ostale, fill = "white"),
                list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
              par.settings = list(panel.background=list(col="#FDFD99"))))
+dev.off()
 
+pdf("slike/zemljevidzdravje.pdf")
 print(spplot(EU, 'zdravjemz', xlim=c(-25,40), ylim=c(33,73), 
              main = "Enakopravnost spolov glede na zdravje",
              col.regions=rainbow(26, start=0, end=3/7),
@@ -86,7 +94,9 @@ print(spplot(EU, 'zdravjemz', xlim=c(-25,40), ylim=c(33,73),
                list("sp.polygons", ostale, fill = "white"),
                list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
              par.settings = list(panel.background=list(col="#FDFD99"))))
+dev.off()
 
+pdf("slike/zemljevidznanje.pdf")
 print(spplot(EU, 'znanjemz', xlim=c(-25,40), ylim=c(33,73), 
              main = "Enakopravnost spolov glede na znanje",
              col.regions=rainbow(26, start=0, end=3/7),

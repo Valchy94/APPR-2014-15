@@ -81,3 +81,41 @@ teden_moski <- uvozi.podatkim()
 source("lib/xml.r",encoding="UTF-8")
 cat("Uvažam podatke o povprečno tedensko opravljenih delovnih urah za ženske.\n")
 teden_zenske <- uvozi.podatkiz()
+
+
+#DODATNE TABELE ZA 4. FAZO
+# *BDP
+uvoziTabelo_BDP <- function() {
+  return(read.table("podatki/bdp glede na pps.csv", header=TRUE, sep = ";", 
+                    dec=",", as.is = TRUE, row.names = 1, 
+                    fileEncoding = "Windows-1250"))
+}
+cat("Uvažam podatke o BDP.\n")
+BDP <- uvoziTabelo_BDP()
+
+#*RODNOST
+uvozitabelo_rodnost<-function(){
+  return(read.table("podatki/rodnost_eu27.csv",header=TRUE,sep=";",
+                    dec=",", as.is=TRUE, row.names=1,
+                    fileEncoding="windows-1250"))
+}
+cat("Uvažam podatke o rodnosti.\n")
+rodnost<-uvozitabelo_rodnost()
+
+# *VIŠJA IZOBRAZBA
+uvozitabelo_izobrazba<-function(){
+  return(read.table("podatki/visja izobrazba.csv", header=TRUE, sep=";",
+                    dec=",", as.is=TRUE, row.names=1,
+                    fileEncoding="windows-1250"))
+}
+cat("Uvažam podatke o izobrazbi.\n")
+izobrazba <- uvozitabelo_izobrazba()
+
+#*STOPNJA ZAPOSLENOSTI
+uvozitabelo_zaposlenost<-function(){
+  return(read.table("podatki/stopnja zaposlenosti.csv", header=TRUE, sep=";",
+                    dec=",", as.is=TRUE, row.names=1,
+                    fileEncoding="windows-1250"))
+}
+cat("Uvažam podatke o zaposlenosti.\n")
+zaposlenost <- uvozitabelo_zaposlenost()

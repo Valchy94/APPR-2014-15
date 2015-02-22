@@ -42,6 +42,10 @@ rot <- ifelse(imena == "Portugal", 90, 0)
 
 imena["Luxembourg"] <- ""
 imena["United Kingdom"] <- "United\nKingdom"
+sloimena<-c('Belgija','Bolgarija','Češka','Danska', 'Nemčija','Estonija','Irska',
+            'Grčija','Španija','Francija','Italija', 'Ciper','Latvija','Litva','',
+            'Madžarska','Nizozemska','Avstrija','Poljska','Portugalska','Romunija',
+            'Slovenija','Slovaška','Finska','Švedska','Združeno\nKraljestvo')
 
 #Rišem zemljevide
 cat("Rišem zemljevide v PDF.\n")
@@ -52,7 +56,7 @@ print(spplot(EU, 'casmz', xlim=c(-25,40), ylim=c(33,73),
        col.regions=rainbow(26, start=0, end=3/7),
        sp.layout=list(
          list("sp.polygons", ostale, fill = "white"),
-         list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
+         list("sp.text", koordinate, sloimena, cex=0.6, srt=rot)),
        par.settings = list(panel.background=list(col="#FDFD99"))))
 dev.off()
 
@@ -62,7 +66,7 @@ print(spplot(EU, 'delomz', xlim=c(-25,40), ylim=c(33,73),
              col.regions=rainbow(26, start=0, end=3/7),
              sp.layout=list(
                list("sp.polygons", ostale, fill = "white"),
-               list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
+               list("sp.text", koordinate, sloimena, cex=0.6, srt=rot)),
              par.settings = list(panel.background=list(col="#FDFD99"))))
 dev.off()
 
@@ -72,7 +76,7 @@ print(spplot(EU, 'denarmz', xlim=c(-25,40), ylim=c(33,73),
              col.regions=rainbow(26, start=0, end=3/7),
              sp.layout=list(
                list("sp.polygons", ostale, fill = "white"),
-               list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
+               list("sp.text", koordinate, sloimena, cex=0.6, srt=rot)),
              par.settings = list(panel.background=list(col="#FDFD99"))))
 dev.off()
 
@@ -82,7 +86,7 @@ print(spplot(EU, 'mocmz', xlim=c(-25,40), ylim=c(33,73),
              col.regions=rainbow(26, start=0, end=3/7),
              sp.layout=list(
                list("sp.polygons", ostale, fill = "white"),
-               list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
+               list("sp.text", koordinate, sloimena, cex=0.6, srt=rot)),
              par.settings = list(panel.background=list(col="#FDFD99"))))
 dev.off()
 
@@ -92,7 +96,7 @@ print(spplot(EU, 'zdravjemz', xlim=c(-25,40), ylim=c(33,73),
              col.regions=rainbow(26, start=0, end=3/7),
              sp.layout=list(
                list("sp.polygons", ostale, fill = "white"),
-               list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
+               list("sp.text", koordinate, sloimena, cex=0.6, srt=rot)),
              par.settings = list(panel.background=list(col="#FDFD99"))))
 dev.off()
 
@@ -102,7 +106,7 @@ print(spplot(EU, 'znanjemz', xlim=c(-25,40), ylim=c(33,73),
              col.regions=rainbow(26, start=0, end=3/7),
              sp.layout=list(
                list("sp.polygons", ostale, fill = "white"),
-               list("sp.text", koordinate, imena, cex=0.6, srt=rot)),
+               list("sp.text", koordinate, sloimena, cex=0.6, srt=rot)),
              par.settings = list(panel.background=list(col="#FDFD99"))))
 dev.off()
 

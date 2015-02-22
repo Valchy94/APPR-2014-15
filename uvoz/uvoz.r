@@ -87,7 +87,7 @@ teden_zenske <- uvozi.podatkiz()
 # *BDP
 uvoziTabelo_BDP <- function() {
   return(read.table("podatki/bdp glede na pps.csv", header=TRUE, sep = ";", 
-                    dec=",", as.is = TRUE, row.names = 1, 
+                    dec=",", as.is = TRUE, row.names=1,
                     fileEncoding = "Windows-1250"))
 }
 cat("Uvažam podatke o BDP.\n")

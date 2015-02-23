@@ -95,7 +95,7 @@ BDP <- uvoziTabelo_BDP()
 
 #*RODNOST
 uvozitabelo_rodnost<-function(){
-  return(read.table("podatki/rodnost_eu27.csv",header=TRUE,sep=";",
+  return(read.table("podatki/stopnja rodnosti.csv",header=TRUE,sep=";",
                     dec=",", as.is=TRUE, row.names=1,
                     fileEncoding="windows-1250"))
 }

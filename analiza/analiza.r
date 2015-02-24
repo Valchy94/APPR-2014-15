@@ -16,7 +16,11 @@
 #      ylab = "Št. naselij")
 # dev.off()
 cat("Rišem graf.\n")
-barva<-rainbow(28,start=0,end=7/10)
+#barva<-rainbow(28,start=0,end=7/10)
+GDP<-BDP$X2010
+Mo<-denar$Money
+model<-lm(Mo~I(log1p(GDP)))
+
 sloimena1=c(sloimena[1:14],"Luksemburg",
             sloimena[16],"Malta",sloimena[17:25],
             "Združeno Kraljestvo","EU (27 držav)")
@@ -25,10 +29,12 @@ plot(BDP$X2010,denar$Money,
      main = "BDP glede na enakopravnost v dohodku",
      xlab = "BDP na prebivalca v standardih kupne moči",
      ylab = "Indeks enakopravnosti glede na denarne vire",
-     col=rainbow(28),
+     #col=rainbow(28),
      pch=rep(20,28))
-legend(200,80,sloimena1,pch=rep(20,14),
-       col=barva,cex=0.7,y.intersp=0.7,x.intersp=0.2)
+curve(predict(model,data.frame(GDP=x)),add=TRUE,col="red")
+
+# legend(200,80,sloimena1,pch=rep(20,14),
+#        col=barva,cex=0.7,y.intersp=0.7,x.intersp=0.2)
 #Malo bom preverila kaj je z rodnostjo:
 plot(znanje$Index,rodnost$X2010,
      main = "Stopnja rodnosti glede na enakopravnost",
@@ -36,6 +42,7 @@ plot(znanje$Index,rodnost$X2010,
      ylab = "Stopnja rodnosti v letu 2010")
 plot(znanje$Knowledge, zaposlenost$X2010,
      main="Stopnja zaposlenosti glede na enakopravnost v znanju",
-     xlab="Indeks enakopravnosti glede na prridobivanje znanja",
+     xlab="Indeks enakopravnosti glede na pridobivanje znanja",
      ylab="Stopnja zaposlenosti v letu 2010")
+abline(lm(zaposlenost$X2010~znanje$Knowledge),col="blue")
 dev.off()

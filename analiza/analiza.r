@@ -47,7 +47,7 @@ plot(znanje$Index,rodnost$X2010,
      main = "Stopnja rodnosti glede na enakopravnost",
      xlab = "Indeks enakopravnosti po posameznih državah",
      ylab = "Stopnja rodnosti v letu 2010")
-#zaposlenost glede na znanje
+#zaposlenost glede na enakopravnost v znanju
 plot(znanje$Knowledge, zaposlenost$X2010,
      main="Stopnja zaposlenosti glede na enakopravnost v znanju",
      xlab="Indeks enakopravnosti glede na pridobivanje znanja",

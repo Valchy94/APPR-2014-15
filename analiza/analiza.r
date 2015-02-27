@@ -17,6 +17,9 @@
 # dev.off()
 cat("Rišem graf.\n")
 #barva<-rainbow(28,start=0,end=7/10)
+#Želim prikazati, kako so države razvrščene po indeksu enakopravnosti
+X<-scale(as.matrix(denar[1]))
+t <- hclust(dist(X), method = "ward.D")
 GDP<-BDP$X2010
 Mo<-denar$Money
 model<-lm(Mo~I(log1p(GDP)))
@@ -25,6 +28,10 @@ sloimena1=c(sloimena[1:14],"Luksemburg",
             sloimena[16],"Malta",sloimena[17:25],
             "Združeno Kraljestvo","EU (27 držav)")
 pdf("slike/analiza.pdf",paper="a4",family="Arial")
+
+#Želim prikazati, kako so države razvrščene po indeksu enakopravnosti:
+plot(t, hang=-1, cex=0.6, main = "Razvrstitev držav po indeksu enakopravnosti")
+#BDP glede na enakopravnost v dohodkih:
 plot(BDP$X2010,denar$Money,
      main = "BDP glede na enakopravnost v dohodku",
      xlab = "BDP na prebivalca v standardih kupne moči",
@@ -40,9 +47,11 @@ plot(znanje$Index,rodnost$X2010,
      main = "Stopnja rodnosti glede na enakopravnost",
      xlab = "Indeks enakopravnosti po posameznih državah",
      ylab = "Stopnja rodnosti v letu 2010")
+#zaposlenost glede na znanje
 plot(znanje$Knowledge, zaposlenost$X2010,
      main="Stopnja zaposlenosti glede na enakopravnost v znanju",
      xlab="Indeks enakopravnosti glede na pridobivanje znanja",
      ylab="Stopnja zaposlenosti v letu 2010")
 abline(lm(zaposlenost$X2010~znanje$Knowledge),col="blue")
+
 dev.off()

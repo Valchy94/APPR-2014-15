@@ -22,7 +22,8 @@ X<-scale(as.matrix(denar[1]))
 t <- hclust(dist(X), method = "ward.D")
 GDP<-BDP$X2010
 Mo<-denar$Money
-model<-lm(Mo~I(log1p(GDP)))
+model<-gam(Mo~s(GDP))
+#model<-lm(Mo~I(log1p(GDP)))
 
 sloimena1=c(sloimena[1:14],"Luksemburg",
             sloimena[16],"Malta",sloimena[17:25],
@@ -30,7 +31,10 @@ sloimena1=c(sloimena[1:14],"Luksemburg",
 pdf("slike/analiza.pdf",paper="a4",family="Arial")
 
 #Želim prikazati, kako so države razvrščene po indeksu enakopravnosti:
-plot(t, hang=-1, cex=0.6, main = "Razvrstitev držav po indeksu enakopravnosti")
+plot(t, hang=-1, cex=0.6, 
+     main = "Razvrstitev držav po indeksu enakopravnosti",
+     xlab="Države",
+     ylab="Medsebojno razlikovanje")
 #BDP glede na enakopravnost v dohodkih:
 plot(BDP$X2010,denar$Money,
      main = "BDP glede na enakopravnost v dohodku",
@@ -47,11 +51,17 @@ plot(znanje$Index,rodnost$X2010,
      main = "Stopnja rodnosti glede na enakopravnost",
      xlab = "Indeks enakopravnosti po posameznih državah",
      ylab = "Stopnja rodnosti v letu 2010")
+# legend(60,1.7,sloimena1,pch=rep(20,14),
+#        col=barva,cex=0.7,y.intersp=0.7,x.intersp=0.2)
 #zaposlenost glede na enakopravnost v znanju
 plot(znanje$Knowledge, zaposlenost$X2010,
      main="Stopnja zaposlenosti glede na enakopravnost v znanju",
      xlab="Indeks enakopravnosti glede na pridobivanje znanja",
      ylab="Stopnja zaposlenosti v letu 2010")
-abline(lm(zaposlenost$X2010~znanje$Knowledge),col="blue")
+#abline(lm(zaposlenost$X2010~znanje$Knowledge),col="blue")
+znam<-znanje$Knowledge
+delam<-zaposlenost$X2010
+nekaj<-gam(delam~s(znam))
+curve(predict(nekaj,data.frame(znam=x)),add=TRUE,col="blue")
 
 dev.off()

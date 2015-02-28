@@ -54,7 +54,7 @@ plot(znanje$Index,rodnost$X2010,
      ylab = "Stopnja rodnosti v letu 2010")
 indeks<-znanje$Index
 rodn<-rodnost$X2010
-curve(predict(gam(rodn~s(indeks)),data.frame(indeks=x)),add=TRUE,col="magenta")
+#curve(predict(gam(rodn~s(indeks)),data.frame(indeks=x)),add=TRUE,col="magenta")
 curve(predict(loess(rodn~indeks)),data.frame(indeks=x)),add=TRUE,col="cyan")
 # legend(60,1.7,sloimena1,pch=rep(20,14),
 #        col=barva,cex=0.7,y.intersp=0.7,x.intersp=0.2)

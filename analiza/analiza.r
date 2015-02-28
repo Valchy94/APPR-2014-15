@@ -1,4 +1,5 @@
 # 4. faza: Analiza podatkov
+library(mgcv)
 
 # Uvozimo funkcijo za uvoz spletne strani.
 # source("lib/xml.r")
@@ -51,6 +52,9 @@ plot(znanje$Index,rodnost$X2010,
      main = "Stopnja rodnosti glede na enakopravnost",
      xlab = "Indeks enakopravnosti po posameznih državah",
      ylab = "Stopnja rodnosti v letu 2010")
+indeks<-znanje$Index
+rodn<-rodnost$X2010
+curve(predict(gam(rodn~s(indeks)),data.frame(indeks=x)),add=TRUE,col="magenta")
 # legend(60,1.7,sloimena1,pch=rep(20,14),
 #        col=barva,cex=0.7,y.intersp=0.7,x.intersp=0.2)
 #zaposlenost glede na enakopravnost v znanju

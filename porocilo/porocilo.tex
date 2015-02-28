@@ -81,7 +81,7 @@ Peti zemljevid nam pokaže enakopravnost med spoloma glede na zdravje (dostopnos
 
 \newpage
 
-Šesti in zadnji zemljevid prikazuje enakopravnost, merjeno glede na znanje oziroma izobrazbo ljudi. Danska, Velika Britanija, Švedska, Finska in Nizozemska imajo po spolu in znanju najbolj enakopravno prebivalstvo.Nasprotno pa so Romunija, Bolgarija, Italija in Portugalska tu najšibkejše.
+Šesti in zadnji zemljevid prikazuje enakopravnost merjeno glede na znanje oziroma izobrazbo ljudi. Danska, Velika Britanija, Švedska, Finska in Nizozemska imajo po spolu in znanju najbolj enakopravno prebivalstvo.Nasprotno pa so Romunija, Bolgarija, Italija in Portugalska tu najšibkejše.
 
 \includegraphics[width=\textwidth]{../slike/zemljevidznanje.pdf}
 
@@ -91,7 +91,31 @@ Slovenija pri vseh področjih merjenja enakopravnosti zaseda zlato sredino. Nikj
 %\includegraphics{../slike/povprecna_druzina.pdf}
 
 \section{Napredna analiza podatkov}
-V zadnji fazi sem se odločila, da bom pogledala, ali imajo BDP, stopnja zaposlenosti v posamezni državi in rodnost kaj skupnega s spolno enakopravnostjo. Želela sem ugotoviti tudi, katere države so si med sabo podobne po enakopravnem prebivalstvu.
+V zadnji fazi sem se odločila preveriti, ali imajo BDP, stopnja zaposlenosti v posamezni državi in rodnost kaj skupnega s spolno enakopravnostjo. Želela sem ugotoviti tudi, katere države so si med sabo podobne po enakopravnem prebivalstvu.
+
+Tako sem za začetek naredila naslednji graf, ki je izbrane države razvrstil v skupine:
+\includepdf[pages={1}]{../slike/analiza.pdf}
+Iz grafa je že malce razvidno, da je indeks enakopravnosti do neke mere povezan z gospodarsko razvitostjo držav (Švedska, Finska, Danska ter Nizozemska so skupaj v isti veji, so pa poznane tudi kot ene naprednejših držav EU), delno pa tudi z geografsko lokacijo (npr. Portugalska in Malta, Romunija in Bolgarija, Finska, danska in Švedska, Češka, Poljska, Litva in Latvija), kar je morda tudi odraz podobne politične ureditve v preteklosti.
+
+Svojo domnevo glede povezanosti BDP in stopnje enakopravnosti sem preverila z naslednjim grafom. 
+\includepdf[pages={2}]{../slike/analiza.pdf}
+Primerjala sem stopnjo enakopravnosti v dohodkih ter BDP na prebivalca v standardih kupne moči (slednji je merilo za gospodarsko dejavnost in je opredeljen kot vrednost vsega blaga in storitev, uporabljenih pri njihovem (pro)izvajanju; indeks obsega BDP v standardih kupne moči je izražen glede na povprečje EU, ki je postavljeno za merilo in zato izenačeno s 100).  
+Povezava je očitna. Države z višjim BDP imajo tudi višjo stopnjo enakopravnosti, pri tistih, ki so manj produktivne, pa je enakopravnost manjša. Podatke sem tudi regresijsko analizirala s celostnim modelom \verb-gam-: To je model za celostno prileganje, ki se v glavnem uporablja za glajenje krivulj. Za podano množico točk A model \verb-gam- poišče gladko krivuljo, ki se najbolje prilega točkam iz A. Na dotičnem grafu je ta krivulja rdeče barve in ima obliko konkavne funkcije. Lahko bi povzeli, da to pomeni, da z rastjo BDP raste tudi enakopravnost, vendar je z vedno višjim BDP učinek le-tega na enakopravnost vedno manjši.
+
+Naslednja spremenljivka, ki sem jo preverjala, je bila stopnja rodnosti glede na indeks enakopravnosti. Torej, ker nizka rodnost postaja vedno večji problem v razvitejših državah, me je zanimalo, ali lahko nanjo vsaj nekoliko vplivamo z zagotavljanjem enakih pogojev za življenje obeh spolov.
+
+\includepdf[pages={3}]{../slike/analiza.pdf}
+
+Odgovor je pritrdilen. Z grafa je opazno naraščanje rodnosti z rastjo indeksa enakopravnosti. Tudi na tem grafu sem uporabila model \verb-gam-, ki je še bolj potrdil moje domneve. krivulja, ki sem jo dobila z \verb-gam- sicer ni strogo naraščajoča, vendar je trend močno viden. Načeloma je rodnost višja, ko je indeks enakopravnosti večji.
+
+Za zadnji graf sem primerjala stopnjo zaposlenosti v odvosnosti od stopnje enakopravnosti v znanju. 
+
+\includepdf[pages={4}]{../slike/analiza.pdf}
+
+Na tem grafu so sicer točke (tj. podatki) precej razpršene, vendar je obnašanje ene spremenljivke v odvisnosti od druge precej očitno. Menim, da bi bila ob večji količini podatkov tudi oblika obnašanja še toliko vidnejša. 
+
+Pri razbiranju obnašanja stopnje zaposlenosti v odvisnosti od enakopravnosti v znanju sem si tudi tukaj pomagala z modelom \verb-gam-. Ta poudarja, da v glavnem enakopravnost po znanju vpliva tudi na stopnjo zaposlenosti v posameznih državah.
+
 
 
 

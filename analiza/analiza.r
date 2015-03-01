@@ -31,17 +31,21 @@ sloimena1=c(sloimena[1:14],"Luksemburg",
             "Združeno Kraljestvo","EU (27 držav)")
 pdf("slike/analiza.pdf",paper="a4",family="Arial")
 
+barve1 = c("red", "green", "blue", "cyan", "magenta", "yellow","grey")
+#barve1<-rainbow(7)
+p<-cutree(t,k=7)
 #Želim prikazati, kako so države razvrščene po indeksu enakopravnosti:
 plot(t, hang=-1, cex=0.6, 
      main = "Razvrstitev držav po indeksu enakopravnosti",
      xlab="Države",
      ylab="Medsebojno razlikovanje")
+rect.hclust(t,k=7,border="red")
 #BDP glede na enakopravnost v dohodkih:
 plot(BDP$X2010,denar$Money,
      main = "BDP glede na enakopravnost v dohodku",
      xlab = "BDP na prebivalca v standardih kupne moči",
      ylab = "Indeks enakopravnosti glede na denarne vire",
-     #col=rainbow(28),
+     col=barve1[p],
      pch=rep(20,28))
 curve(predict(model,data.frame(GDP=x)),add=TRUE,col="red")
 
@@ -51,7 +55,8 @@ curve(predict(model,data.frame(GDP=x)),add=TRUE,col="red")
 plot(znanje$Index,rodnost$X2010,
      main = "Stopnja rodnosti glede na enakopravnost",
      xlab = "Indeks enakopravnosti po posameznih državah",
-     ylab = "Stopnja rodnosti v letu 2010")
+     ylab = "Stopnja rodnosti v letu 2010",
+     col=barve1[p],pch=rep(20,28))
 indeks<-znanje$Index
 rodn<-rodnost$X2010
 mls<-rodn~indeks
@@ -63,7 +68,8 @@ curve(predict(gam(rodn~s(indeks)),data.frame(indeks=x)),add=TRUE,col="magenta")
 plot(znanje$Knowledge, zaposlenost$X2010,
      main="Stopnja zaposlenosti glede na enakopravnost v znanju",
      xlab="Indeks enakopravnosti glede na pridobivanje znanja",
-     ylab="Stopnja zaposlenosti v letu 2010")
+     ylab="Stopnja zaposlenosti v letu 2010",
+     col=barve1[p],pch=rep(20,28))
 #abline(lm(zaposlenost$X2010~znanje$Knowledge),col="blue")
 znam<-znanje$Knowledge
 delam<-zaposlenost$X2010

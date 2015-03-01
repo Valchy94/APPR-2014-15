@@ -120,13 +120,15 @@ Iz grafa je že malce razvidno, da je indeks enakopravnosti do neke mere povezan
 Svojo domnevo glede povezanosti BDP in stopnje enakopravnosti sem preverila z naslednjim grafom. 
 \includepdf[pages={2}]{../slike/analiza.pdf}
 Primerjala sem stopnjo enakopravnosti v dohodkih ter BDP na prebivalca v standardih kupne moči (slednji je merilo za gospodarsko dejavnost in je opredeljen kot vrednost vsega blaga in storitev, uporabljenih pri njihovem (pro)izvajanju; indeks obsega BDP v standardih kupne moči je izražen glede na povprečje EU, ki je postavljeno za merilo in zato izenačeno s 100).  
-Povezava je očitna. Države z višjim BDP imajo tudi višjo stopnjo enakopravnosti, pri tistih, ki so manj produktivne, pa je enakopravnost manjša. Podatke sem tudi regresijsko analizirala s celostnim modelom \verb-gam-: To je model za celostno prileganje, ki se v glavnem uporablja za glajenje krivulj. Za podano množico točk A model \verb-gam- poišče gladko krivuljo, ki se najbolje prilega točkam iz A. Na dotičnem grafu je ta krivulja rdeče barve in ima obliko konkavne funkcije. Lahko bi povzeli, da to pomeni, da z rastjo BDP raste tudi enakopravnost, vendar je z vedno višjim BDP učinek le-tega na enakopravnost vedno manjši.
+Povezava je očitna. Države z višjim BDP imajo tudi višjo stopnjo enakopravnosti, pri tistih, ki so manj produktivne, pa je enakopravnost manjša. Podatke sem tudi regresijsko analizirala s funkcijo, ki nam vrne celostni model, funkcija \verb-gam-: To je funkcija za celostno prileganje, ki se v glavnem uporablja za glajenje krivulj. Za podano množico točk A funkcija \verb-gam- poišče gladko krivuljo, ki se najbolje prilega točkam iz A. Krivuljo sem dobila tako, da sem funkciji \verb-gam- podala linearno funkcijsko odvisnost med podatki, dejanski model pa je seveda kompleksnejši.
+
+Na dotičnem grafu je ta krivulja rdeče barve in ima obliko konkavne funkcije. Lahko bi povzeli, da to pomeni, da z rastjo BDP raste tudi enakopravnost, vendar je z vedno višjim BDP učinek le-tega na enakopravnost vedno manjši.
 
 Naslednja spremenljivka, ki sem jo preverjala, je bila stopnja rodnosti glede na indeks enakopravnosti. Torej, ker nizka rodnost postaja vedno večji problem v razvitejših državah, me je zanimalo, ali lahko nanjo vsaj nekoliko vplivamo z zagotavljanjem enakih pogojev za življenje obeh spolov.
 
 \includepdf[pages={3}]{../slike/analiza.pdf}
 
-Odgovor je pritrdilen. Z grafa je opazno naraščanje rodnosti z rastjo indeksa enakopravnosti. Tudi na tem grafu sem uporabila model \verb-gam-, ki je še bolj potrdil moje domneve. krivulja, ki sem jo dobila z \verb-gam- sicer ni strogo naraščajoča, vendar je trend močno viden. Načeloma je rodnost višja, ko je indeks enakopravnosti večji.
+Odgovor je pritrdilen. Z grafa je opazno naraščanje rodnosti z rastjo indeksa enakopravnosti. Tudi na tem grafu sem uporabila funkcijo \verb-gam-, ki je še bolj potrdila moje domneve. krivulja, ki sem jo dobila z \verb-gam- sicer ni strogo naraščajoča, vendar je trend močno viden. Načeloma je rodnost višja, ko je indeks enakopravnosti večji.
 
 Za zadnji graf sem primerjala stopnjo zaposlenosti v odvosnosti od stopnje enakopravnosti v znanju. 
 

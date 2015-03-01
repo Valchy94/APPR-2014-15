@@ -33,9 +33,29 @@ V tej fazi projekta sem uvozila osem podatkovnih tabel, ki sem jih pridobila na 
 Zbrane tabele sem uredila, odstranila odvečne znake in zanje napisala program za uvoz. 
 Ker je za datoteke oblike HTML čiščenje podatkov nekoliko zahtevnejše kot za CSV, sem za zadnji dve tabeli v mapi lib napisala pomožen program, ki je podatke očistil. Ta program sem nato klicala v uvozi.r, kjer sem napisala tudi ostale funkcije za uvoz podatkov.
 
+Uvožene tabele so:
+\begin{enumerate}
+\item{tabela: Prikazuje indeks enakopravnosti glede na čas (imenske spremenljivke)}\\
+\item{tabela: Prikazuje indeks enakopravnosti glede na delo (imenske spremenljivke)}\\
+\item{tabela: Prikazuje indeks enakopravnosti glede na denar (imenske spremenljivke)}\\
+\item{tabela: Prikazuje indeks enakopravnosti glede na moč (imenske spremenljivke)}\\
+\item{tabela: Prikazuje indeks enakopravnosti glede na znanje (imenske spremenljivke)}\\
+\item{tabela: Prikazuje indeks enakopravnosti glede na zdravje (imenske spremenljivke)}\\
+\item{tabela: Prikazuje tedensko opravljene delovne ure moških v Sloveniji od 2008 do 2013 (številske spremenljivke)}\\
+\item{tabela: Prikazuje tedensko opravljene delovne ure moških v Sloveniji od 2008 do 2013 (številske spremenljivke)}\\
+\end{enumerate}
+
+Kasneje sem dodala še štiri tabele, ki sem jih uporabila v 4. fazi:\\
+\begin{enumerate}
+\item{tabela: Prikazuje BDP v standardih kupne moči v državah EU (imenske spremenljivke)}\\
+\item{tabela: Prikazuje stopnjo rodnosti v posameznih državah EU (imenske spremenljivke)}\\
+\item{tabela: Prikazuje delež višje izobraženega prebivalstva v državah EU (imenske spremenljivke)}\\
+\item{tabela: Prikazuje stopnjo zaposlenosti v državah EU (imenske spremenljivke)}\\
+\end{enumerate}
+
 Podatke sleherne uvožene tabele sem prikazala tudi z grafi. Navadno sem za prikaz izbrala najpomembnejšo komponento tabele (na primer iz tabele \verb-index_znanje- sem izbrala podatke za komponento "Knowledge", ki zajema vse ostale (pod)komponente). 
 
-Za risanje grafov sem napisala svoj program Grafi.r, ki sem ga shranila v mapo slike.
+Za risanje grafov sem napisala svoj program \verb-Grafi.r-, ki sem ga shranila v mapo \verb-slike-.
 Za prikaz podatkov iz prvih šest tabel (oblike CSV) sem izbrala stolpični graf, saj je tako najbolj razvidno, kakšna je stopnja enakopravnosti (glede na ustrezno področje) v posameznh  državah. Ta je merjena z indeksom enakopravnosti, posebne merske enote, s pomočjo katere na enostaven način lahko razberemo (ne)enakosti med spoloma (indeks=100 pomeni popolno enakopravnost, indeks=0 pa neenakopravnost).
 
 Podatke iz zadnjih dveh tabel sem združila v enem grafu, saj sem želela primerjati število opravljenih delovnih ur moških in žensk v Sloveniji. Ker me je zanimala samo raven razlike v posameznem letu, sem si za grafično sliko izbrala točkovni graf.
@@ -116,6 +136,31 @@ Na tem grafu so sicer točke (tj. podatki) precej razpršene, vendar je obnašan
 
 Pri razbiranju obnašanja stopnje zaposlenosti v odvisnosti od enakopravnosti v znanju sem si tudi tukaj pomagala z modelom \verb-gam-. Ta poudarja, da v glavnem enakopravnost po znanju vpliva tudi na stopnjo zaposlenosti v posameznih državah.
 
+\section{Zaključek}
+V zaključku lahko povzamem, da je enakopravnost pomembna komponenta, ki vpliva tako na produktivnost in stopnjo zaposlenosti kot tudi na rodnost v državi.
+\begin{thebibliography}{9}
+%rodnost
+\bibitem{1}
+  \url{http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&plugin=1&pcode=tsdde220&language=en}\\
+%zaposlenost
+\bibitem{2}
+  \url{http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=tsdec420&plugin=1}\\
+%izobrazba
+\bibitem{3}
+  \url{http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=tps00065&plugin=1}\\
+%BDP
+\bibitem{4}
+  \url{http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=tec00114&plugin=1}\\
+%indeks
+\bibitem{5}
+  \url{http://eige.europa.eu/content/gender-equality-index#/}\\
+%tedenske ure moški
+\bibitem{6}
+  \url{http://appsso.eurostat.ec.europa.eu/nui/submitViewTableAction.do;jsessionid=dmXUv7BtmcDdWC0D7862POuKHlYd1u7v1GMxGgP1IeJnsJQTdfjL!-2067844722}\\
+%tedenske ure ženske
+\bibitem{7}
+  \url{http://appsso.eurostat.ec.europa.eu/nui/submitViewTableAction.do;jsessionid=dmXUv7BtmcDdWC0D7862POuKHlYd1u7v1GMxGgP1IeJnsJQTdfjL!-2067844722}\\
+\end{thebibliography}
 
 
 
